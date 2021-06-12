@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+/* 
+====================
+variables begin here
+==================== 
+*/
+
+:root{
+  --primary-clr: rgb(189, 172, 127);
+  --nav-primary-clr: rgba(146, 178, 214, 0.05);
+  --nav-secondary-clr: rgb(108, 134, 206);
+  --txt-shadow: 1px 1px 5px white;
+}
+
+/* 
+==================
+globals begin here
+==================
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+.container{
+  position: relative;
+  width:100%;
+  height: 150vh;
+}
+
+/* 
+======================
+hero video begins here
+======================
+*/
+
+.video-container {
+  position: relative;
+  min-height: 100vh;
+  z-index: -1;
+}
+#myVideo {
+  position: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.get-away {
+  position: absolute;
+  top: 55vh;
+  right: 0;
+  left: 0;
+  font-size: 5rem;
+  text-align: center;
+}
+.get-away a {
+  color: var(--primary-clr);
+  text-shadow: var(--txt-shadow);
+}
+
+/* 
+=======================
+navigation beegins here
+=======================
+*/
+
+nav {
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top:0;
+  right: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  background-color: var(--nav-primary-clr);
+  z-index: 5;
+}
+nav ul {
+  display: flex;
+  position: absolute;
+  line-height: 2rem;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.home {
+  padding-right: 5rem;
+}
+.pricing {
+  padding-left: 5rem;
+}
+.nav-link {
+  color: var(--nav-secondary-clr);
+}
+
+/* 
+============================
+scroll animation begins here
+============================
+*/
+
+.scroll {
+  position: fixed;
+  /* top:0; */
+  bottom: -0.021em;
+  left: 0;
+  right: 0;
+  display: flex;
+  /* align-items:center; */
+  justify-content: center;
+}
+.mouse {
+  width: 50px;
+  height: 90px;
+  border: 3px solid var(--primary-clr);
+  border-radius: 60px;
+  position: relative;
+}
+.mouse::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: var(--nav-secondary-clr); */
+  background-image: linear-gradient(var(--primary-clr), var(--nav-secondary-clr));
+  border-radius: 50%;
+  opacity: 1;
+  animation: wheel 2s infinite;
+  -webkit-animation: wheel 2s infinite;
+}
+
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
+  }
+}
+
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
+  }
+}
+
+/* 
+============================
+discover section begins here
+============================
+*/
+
+.discover{
+  position: relative;
+  background-image: linear-gradient(transparent, var(--primary-clr), transparent);
+  height:150vh;
+  
+}
+.discover-card{
+  position:absolute;
+  width:425px;
+  height:300px;
+  /* border: 3px solid; */
+  top:28%;
+  left:60%;
+
+  z-index: 5;
+}
+
+.discover-title{
+  position: absolute;
+  width:400px;
+  top:10%;
+  left: .75rem
+}
+.discover-title::before{
+  content: '';
+  position: absolute;
+  height:110%;
+  border: 1px solid;
+  left:-5px;
+  background-color: black;
+  box-shadow: 5px 5px 5px black;
+}
+.discover-text{
+  position: absolute;
+  width:400px;
+  top:60%;
+  left: .75rem;
+  text-align: right;
+}
+.discover-text::before{
+   content: '';
+  position: absolute;
+  height:140%;
+  border: 1px solid;
+  right:-5px;
+  background-color: black;
+  box-shadow: 5px 5px 5px black;
+}
+.discover-text::after{
+   content: '';
+  position: absolute;
+  width:140%;
+  border: 1px solid;
+  right:-35px;
+  background-color: black;
+  box-shadow: 5px 5px 5px black;
+}
+.discover-img-bg{
+  position: absolute;
+  width: 900px;
+  height: 600px;
+  top:17%;
+  left:11%;
+
+  background-color: white;
+}
+.discover-img{
+  position:absolute;
+  width: 900px;
+  height: 600px;
+  /* border: 3px solid; */
+  top:18%;
+  left:10%;
+
+  background-image: url(./guides.jpg);
+  background-size: cover;
+  z-index:2
+}
+.discover-banner{
+  position: absolute;
+  border: 3px solid;
+  height: 300px;
+  width: 85vw;
+  top:27%;
+  
+
+  left:4rem;
+  z-index: 1
+}
+.meet-our-guides{
+  position: absolute;
+  height: 50px;
+  width:150px;
+  border: 3px solid white;
+  top:50%;
+  left: 60%;
+  text-align:center;
+  line-height:47px;
+  color:white;
+}
+.meet-our-guides:hover{
+  background-color: white;
+  color: var(--nav-secondary-clr)
+}
